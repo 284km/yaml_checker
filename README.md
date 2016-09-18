@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
+```
 usage: yaml_checker <file(.yml/.yaml) or directory path>
+```
 
 e.g.
 
