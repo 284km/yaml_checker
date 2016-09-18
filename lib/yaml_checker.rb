@@ -19,9 +19,9 @@ module YamlChecker
       if File.directory?(path)
         Dir.glob("#{path}/**/*.{yml,yaml}").each do |f|
           load(f)
-          warn errors
-          return errors.empty?
         end
+        warn errors
+        return errors.empty?
       elsif File.file?(path)
         if File.extname(path).match(/\.ya?ml/)
           load(path)
