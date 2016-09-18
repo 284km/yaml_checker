@@ -30,6 +30,19 @@ e.g.
     $ yaml_checker path/to/directory/foo.yml
     $ yaml_checker path/to/directory/bar.yaml
 
+if includes invalid YAML files then output all invalid files as below.
+
+```
+$ yaml_checker examples/
+(/path/to/examples/dir1/dir2/invalid.yml): did not find expected key while parsing a block mapping at line 1 column 3
+(/path/to/examples/dir1/invalid.yml): did not find expected key while parsing a block mapping at line 1 column 3
+(/path/to/examples/invalid.yml): did not find expected key while parsing a block mapping at line 1 column 3
+(/path/to/examples/dir1/dir2/invalid.yaml): did not find expected key while parsing a block mapping at line 1 column 3
+(/path/to/examples/dir1/invalid.yaml): did not find expected key while parsing a block mapping at line 1 column 3
+(/path/to/examples/invalid.yaml): did not find expected key while parsing a block mapping at line 1 column 3
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment. Run `bundle exec yaml_checker` to use the gem in this directory, ignoring other installed copies of this gem.
