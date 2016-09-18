@@ -18,37 +18,37 @@ describe YamlChecker do
       end
 
       context "given file name .yml" do
-        let(:argv) { ["../../spec/examples/valid.yml"] }
+        let(:argv) { ["spec/examples/valid.yml"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(true) }
       end
 
       context "given file name .yaml" do
-        let(:argv) { ["../../spec/examples/valid.yaml"] }
+        let(:argv) { ["spec/examples/valid.yaml"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(true) }
       end
 
       context "given invalid .yml" do
-        let(:argv) { ["../../spec/examples/invalid.yml"] }
+        let(:argv) { ["spec/examples/invalid.yml"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(false) }
       end
 
       context "given file name .txt" do
-        let(:argv) { ["../../spec/examples/ignore.txt"] }
+        let(:argv) { ["spec/examples/ignore.txt"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(false) }
       end
 
       context "given file name without extname" do
-        let(:argv) { ["../../spec/examples/ignore"] }
+        let(:argv) { ["spec/examples/ignore"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(false) }
       end
 
       context "given directory name include only valid YAML files" do
-        let(:argv) { ["../../spec/examples/valid"] }
+        let(:argv) { ["spec/examples/valid"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(true) }
       end
 
       context "given directory name include invalid YAML files" do
-        let(:argv) { ["../../spec/examples"] }
+        let(:argv) { ["spec/examples"] }
         it { expect(YamlChecker::Checker.run(argv)).to eq(false) }
       end
     end

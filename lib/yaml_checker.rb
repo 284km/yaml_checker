@@ -56,7 +56,7 @@ module YamlChecker
           abort "Missing file or directory path argument"
           @argv.first
         else
-          File.expand_path(@argv.first, __FILE__)
+          File.expand_path(@argv.first)
         end
     end
 
