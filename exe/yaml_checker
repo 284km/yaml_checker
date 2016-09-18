@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
 require "yaml_checker"
+YamlChecker::Checker.run(ARGV)
